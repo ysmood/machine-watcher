@@ -1,2 +1,2 @@
 npm install
-cp config.coffee.example config.coffee
+cp config.example.coffee config.coffee
