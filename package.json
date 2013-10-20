@@ -1,0 +1,25 @@
+{
+  "name": "machine-watcher",
+  "version": "0.0.1",
+  "description": "A tool for watching the state of a remote machine",
+  "main": "app.coffee",
+  "scripts": {
+    "setup": "kit/setup.sh",
+    "test": "test/test.sh",
+    "client": "node_modules/.bin/coffee client.coffee",
+    "server": "node_modules/.bin/coffee server.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "tool"
+  ],
+  "author": "ys",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "coffee-script": "~1.6.3",
+    "nodemailer": "~0.5.3"
+  }
+}
