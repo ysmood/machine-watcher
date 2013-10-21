@@ -31,7 +31,7 @@ module.exports = {
 	# The interval to send a report mail while remote machine is down, by hours.
 	mail_span: 24
 
-	log_file: "mw.log"
+	log_file: "log/mw.log"
 
 	# By second.
 	socket_timeout: 3
