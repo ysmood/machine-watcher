@@ -8,10 +8,12 @@ Please read the `config.coffee` file before starting the server or client.
 
     npm run-script setup
 
-# Start server
+# Start / Stop Server
 
-   npm run-script server
+   npm start server
+   npm stop server
 
-# Start client
+# Start / Stop Client
 
-   npm run-script client
+   npm start client
+   npm stop client

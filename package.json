@@ -7,8 +7,9 @@
     "setup": "kit/setup.sh",
     "test": "test/test.sh",
     "client": "node_modules/.bin/coffee client.coffee",
-    "start": "node_modules/.bin/coffee server.coffee",
-    "server": "node_modules/.bin/coffee server.coffee"
+    "server": "node_modules/.bin/coffee server.coffee",
+    "start": "kit/ctrl.sh start",
+    "stop": "kit/ctrl.sh stop"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "coffee-script": "~1.6.3",
-    "nodemailer": "~0.5.3"
+    "nodemailer": "~0.5.3",
+    "forever": "~0.10.9"
   }
 }
