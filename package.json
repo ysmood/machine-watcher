@@ -7,7 +7,7 @@
     "setup": "kit/setup.sh",
     "test": "test/test.sh",
     "client": "node_modules/.bin/coffee client.coffee",
-    "server": "node_modules/.bin/coffee server.coffee",
+    "server": "node_modules/.bin/coffee server.coffee"
   },
   "repository": {
     "type": "git",
