@@ -10,10 +10,10 @@ Please read the `config.coffee` file before starting the server or client.
 
 # Start / Stop Server
 
-   npm start server
-   npm stop server
+   kit/ctrl.sh start server
+   kit/ctrl.sh stop server
 
 # Start / Stop Client
 
-   npm start client
-   npm stop client
+   kit/ctrl.sh start client
+   kit/ctrl.sh stop client

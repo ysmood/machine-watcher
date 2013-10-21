@@ -1,6 +1,6 @@
 {
   "name": "machine-watcher",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tool for watching the state of a remote machine",
   "main": "app.coffee",
   "scripts": {
@@ -8,8 +8,6 @@
     "test": "test/test.sh",
     "client": "node_modules/.bin/coffee client.coffee",
     "server": "node_modules/.bin/coffee server.coffee",
-    "start": "kit/ctrl.sh start",
-    "stop": "kit/ctrl.sh stop"
   },
   "repository": {
     "type": "git",
@@ -24,5 +22,11 @@
     "coffee-script": "~1.6.3",
     "nodemailer": "~0.5.3",
     "forever": "~0.10.9"
+  },
+  "bugs": {
+    "url": "https://github.com/ysmood/machine-watcher/issues"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3"
   }
 }
