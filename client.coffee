@@ -13,6 +13,7 @@ get_data_pack = ->
 		uptime: parseInt(os.uptime() / 60 / 60) + ' hours'
 		mem: parseInt(os.freemem() / mem_unit) + ' MB / ' +
 			 parseInt(os.totalmem() / mem_unit) + ' MB'
+		net: os.getNetworkInterfaces()
 	}
 
 	return JSON.stringify(data)
