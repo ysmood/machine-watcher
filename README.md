@@ -10,10 +10,10 @@ Please read the `config.coffee` file before starting the server or client.
 
 # Start / Stop Server
 
-   kit/ctrl.sh start server
-   kit/ctrl.sh stop server
+    kit/ctrl.sh start server
+    kit/ctrl.sh stop server
 
 # Start / Stop Client
 
-   kit/ctrl.sh start client
-   kit/ctrl.sh stop client
+    kit/ctrl.sh start client
+    kit/ctrl.sh stop client
