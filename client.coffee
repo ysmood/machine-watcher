@@ -6,6 +6,7 @@ conf = require './config'
 get_data_pack = ->
 	mem_unit = 1024 * 1024
 	data = {
+		time: (new Date).toLocaleString()
 		key: conf.key
 		name: conf.name
 		hostname: os.hostname()
