@@ -5,6 +5,17 @@ conf = require './config'
 
 get_data_pack = ->
 	mem_unit = 1024 * 1024
+
+	# Get IPv4 addr.
+	for k, v of os.networkInterfaces()
+		for i in v
+			if i.family == 'IPv4'
+				ip = i.address
+				last = +ip[ip.length - 1]
+				if last != 0 and last != 1
+					ip_addr = ip
+
+
 	data = {
 		time: (new Date).toLocaleString()
 		key: conf.key
@@ -14,7 +25,7 @@ get_data_pack = ->
 		uptime: parseInt(os.uptime() / 60 / 60) + ' hours'
 		mem: parseInt(os.freemem() / mem_unit) + ' MB / ' +
 			 parseInt(os.totalmem() / mem_unit) + ' MB'
-		net: os.networkInterfaces()
+		ip: ip_addr
 	}
 
 	return JSON.stringify(data)

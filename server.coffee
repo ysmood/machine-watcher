@@ -16,7 +16,11 @@ init_machines = ->
 
 send_mail_report = (info) ->
 	span = (Date.now() - info.last_mail) / 1000 / 60 / 60
-	if span > conf.mail_span
+
+	console.log span
+	console.log info.last_mail
+
+	if span < conf.mail_span
 		return
 
 	mailer = nodemailer.createTransport("SMTP", conf.smtp)
@@ -66,11 +70,8 @@ launch_server = ->
 				c.end('auth error')
 				return
 
-			machines[data.key] = {
-				last_report: Date.now()
-				last_mail: Date.now()
-				data: data
-			}
+			machines[data.key].last_report = Date.now()
+			machines[data.key].data = data
 
 			log data
 			c.end('server ok')
