@@ -10,13 +10,13 @@ init_machines = ->
 	for key in conf.accept_keys
 		machines[key] = {
 			last_report: Date.now()
-			last_mail: Date.now()
+			last_mail: 0
 			data: null
 		}
 
 send_mail_report = (info) ->
 	span = (Date.now() - info.last_mail) / 1000 / 60 / 60
-	if span < conf.mail_span
+	if span > conf.mail_span
 		return
 
 	mailer = nodemailer.createTransport("SMTP", conf.smtp)
@@ -47,7 +47,7 @@ watcher = ->
 		span = (Date.now() - info.last_report) / 1000 / 60
 		if span > conf.report_span * 2
 			send_mail_report(info)
-			console.log 'miss'
+			console.error 'miss'
 
 launch_server = ->
 	init_machines()
