@@ -17,9 +17,6 @@ init_machines = ->
 send_mail_report = (info) ->
 	span = (Date.now() - info.last_mail) / 1000 / 60 / 60
 
-	console.log span
-	console.log info.last_mail
-
 	if span < conf.mail_span
 		return
 
