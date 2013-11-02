@@ -14,6 +14,9 @@ init_machines = ->
 			data: null
 		}
 
+get_time = ->
+	' ' + (new Date).toLocaleString() + ' '
+
 send_mail_report = (info) ->
 	span = (Date.now() - info.last_mail) / 1000 / 60 / 60
 
@@ -32,16 +35,21 @@ send_mail_report = (info) ->
 
 	mailer.sendMail(mail, (err, res) ->
 		if err
-			console.log(err)
+			console.log(get_time() + err)
 		else
-			console.log("Message sent: " + res.message)
+			console.log(
+				"Message sent: " + get_time() + res.message
+			)
 
 		mailer.close()
 		info.last_mail = Date.now()
 	)
 
 log = (data) ->
-	fs.appendFile(conf.log_file, JSON.stringify(data) + '\n')
+	fs.appendFile(
+		conf.log_file
+		get_time() + JSON.stringify(data) + '\n'
+	)
 
 watcher = ->
 	for k, info of machines
