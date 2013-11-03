@@ -53,7 +53,7 @@ report = ->
 	xurl.req_data = get_data_pack()
 
 	curl(xurl, (xurl) ->
-		console.log xurl.res_data
+		console.log (new Date).toLocaleString() + ' ' + xurl.res_data
 	)
 
 report()
