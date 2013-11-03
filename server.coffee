@@ -48,7 +48,7 @@ send_mail_report = (info) ->
 log = (data) ->
 	fs.appendFile(
 		conf.log_file
-		get_time() + JSON.stringify(data) + '\n'
+		JSON.stringify(data) + '\n'
 	)
 
 watcher = ->
